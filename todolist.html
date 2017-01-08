@@ -11,7 +11,7 @@
 	<ol>
 		<li is='todos' v-for='todo in list' v-if='!todo.iscomplete' v-bind:todo1='todo'></li>
 	</ol>
-	<input type="text" v-model="new_todo" v-on:keyup.enter='addNewTodo'>
+	<input type="text" v-model="new_todo" v-on:keyup.enter='addNewTodo' placeholder="按确定键添加待办事项">
 	<h1>已完成</h1>
 	<ol>
 		<li is='hasdones' v-for='hasdone in list' v-if='hasdone.iscomplete' v-bind:hasdone1='hasdone'></li>
