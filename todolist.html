@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-  <meta charset="utf-8">
-  <title>todoList</title>
-  <script type="text/javascript" src="vue.js"></script>
-</head>
-<body>
-<div id="todolist">
-  <h1>待办事项</h1>
-  <ol>
-    <li is='todos' v-for='todo in list' v-if='!todo.iscomplete' :todo1='todo'></li>
-  </ol>
-  <input type="text" v-model="new_todo" @keyup.enter='addNewTodo' placeholder="按确定键添加待办事项">
-  <h1>已完成</h1>
-  <ol>
-    <li is='hasdones' v-for='hasdone in list' v-if='hasdone.iscomplete' :hasdone1='hasdone'></li>
-  </ol>
-</div>
-  
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>todoList</title>
+    <script type="text/javascript" src="vue.js"></script>
+  </head>
+  <body>
+    <div id="todolist">
+      <h1>待办事项</h1>
+      <ol>
+        <li is='todos' v-for='todo in list' v-if='!todo.iscomplete' :todo='todo'></li>
+      </ol>
+      <input type="text" v-model="new_todo" @keyup.enter='addNewTodo' placeholder="按确定键添加待办事项">
+      <h1>已完成</h1>
+      <ol>
+        <li is='hasdones' v-for='hasdone in list' v-if='hasdone.iscomplete' :hasdone='hasdone'></li>
+      </ol>
+    </div>
 
-  <script type="text/javascript">
-    Vue.component('todos',{
-      props:['todo1'],
-      template:'<li>{{ todo1.content }}<input type="button" value="完成" v-on:click="finish(todo1)"/></li>',
-      methods:{
-        finish:function(x){
-          x.iscomplete=true
+    <script type="text/javascript">
+      Vue.component('todos',{
+        props:['todo'],
+        template:'<li>{{ todo.content }}<input type="button" value="完成" v-on:click="finish(todo)"/></li>',
+        methods: {
+          finish:function(x) {
+            x.iscomplete = true
+          }
         }
-      }
-    })
-    Vue.component('hasdones',{
-      props:['hasdone1'],
-      template:'<li>{{ hasdone1.content }}</li>'
-    })
-    var todolist=new Vue({
-      el:'#todolist',
-      data:{
-        list:[
-          { content:'first',iscomplete:true },
-          { content:'second',iscomplete:false }
-        ],
-        new_todo:''
-      },
-      methods:{
-        addNewTodo:function(){
-          // var x={ content:this.new_todo,iscomplete:false }
-          this.list.push({ content:this.new_todo,iscomplete:false })
-          this.new_todo=''
+      })
+      Vue.component('hasdones',{
+        props:['hasdone'],
+        template:'<li>{{ hasdone.content }}</li>'
+      })
+      var todolist = new Vue({
+        el:'#todolist',
+        data: {
+          list:[
+            { content:'first',iscomplete:true },
+            { content:'second',iscomplete:false }
+          ],
+          new_todo:''
+        },
+        methods: {
+          addNewTodo:function() {
+            // var x={ content:this.new_todo,iscomplete:false }
+            this.list.push({ content:this.new_todo,iscomplete:false })
+            this.new_todo = ''
+          }
         }
-      }
-    })
-  </script>
-</body>
+      })
+    </script>
+  </body>
 </html>
