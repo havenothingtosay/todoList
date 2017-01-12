@@ -9,7 +9,7 @@
     <div id="todolist">
       <h1>待办事项</h1>
       <ol>
-        <li is='todos' v-for='todo in list' v-if='!todo.iscomplete' :todo='todo'></li>
+        <li is='todos' v-for='(todo,index) in list' v-if='!todo.iscomplete' :todo='todo' @delete='del(index)'></li>
       </ol>
       <input type="text" v-model="new_todo" @keyup.enter='addNewTodo' placeholder="按确定键添加待办事项">
       <h1>已完成</h1>
@@ -21,11 +21,15 @@
     <script type="text/javascript">
       Vue.component('todos',{
         props:['todo'],
-        template:'<li>{{ todo.content }}<input type="button" value="完成" v-on:click="finish(todo)"/></li>',
+        template:'<li>{{ todo.content }}<input type="button" value="完成" v-on:click="finish(todo)"/><input type="button" value="删除" v-on:click="$emit(\'delete\')"/></li>',
         methods: {
           finish:function(x) {
             x.iscomplete = true
-          }
+          },
+          // del:function() {
+          //   console.log(1)
+          //   // todolist.list.splice(x,1)
+          // }
         }
       })
       Vue.component('hasdones',{
@@ -46,6 +50,9 @@
             // var x={ content:this.new_todo,iscomplete:false }
             this.list.push({ content:this.new_todo,iscomplete:false })
             this.new_todo = ''
+          },
+          del:function(x) {
+            this.list.splice(x,1)
           }
         }
       })
