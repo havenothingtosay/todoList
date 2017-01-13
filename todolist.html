@@ -21,7 +21,7 @@
     <script type="text/javascript">
       Vue.component('todos',{
         props:['todo'],
-        template:'<li>{{ todo.content }}<input type="button" value="完成" v-on:click="finish(todo)"/><input type="button" value="删除" v-on:click="$emit(\'delete\')"/></li>',
+        template:'<li><span contenteditable=true>{{ todo.content }}</span><input type="button" value="完成" @click="finish(todo)"/><input type="button" value="保存修改" @click="edit(todo,$event.target)"/><input type="button" value="删除" @click="$emit(\'delete\')"/></li>',
         methods: {
           finish:function(x) {
             x.iscomplete = true
@@ -30,6 +30,10 @@
           //   console.log(1)
           //   // todolist.list.splice(x,1)
           // }
+          edit:function(x,target) {
+            // console.log(target.previousSibling.previousSibling.innerHTML)
+            x.content = target.previousSibling.previousSibling.innerHTML
+          }
         }
       })
       Vue.component('hasdones',{
