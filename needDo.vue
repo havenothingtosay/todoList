@@ -11,20 +11,20 @@
 
 <script>
   export default {
-    name:'need-do',
-    props:['prop'],
+    name: 'need-do',
+    props: ['prop'],
     methods: {
-      finish:function(x) {
-        x.iscomplete = true
+      finish: function (x) {
+        x.iscomplete = true;
       },
-      edit:function(x,target) {
+      edit: function (x,target) {
         // console.log(target.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML)
         // console.log(target.previousSibling.previousSibling.innerHTML)
-        x.content = target.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML
+        x.content = target.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML;
       },
-      del:function(x) {
-        console.log(x)
-        this.prop.splice(x,1)
+      del: function (x) {
+        console.log(x);
+        this.prop.splice(x,1);
       }
     }
   }

@@ -1,32 +1,32 @@
-import Vue from 'vue'
-// import ttt from './ttt.vue'
-import needDo from './needDo.vue'
-import hasDone from './hasDone.vue'
+import Vue from 'vue';
+// import ttt from './ttt.vue';
+import needDo from './needDo.vue';
+import hasDone from './hasDone.vue';
 
 var todolist = new Vue({
-  el:'#todolist',
+  el: '#todolist',
   data: {
-    list:[
-      { content:'first',iscomplete:false },
-      { content:'second',iscomplete:false }
+    list: [
+      { content: 'first', iscomplete: false },
+      { content: 'second', iscomplete: false },
     ],
-    new_todo:''
+    new_todo: '',
   },
   methods: {
-    addNewTodo:function() {
-      this.list.push({ content:this.new_todo,iscomplete:false })
-      this.new_todo = ''
+    addNewTodo: function () {
+      this.list.push({ content: this.new_todo, iscomplete: false });
+      this.new_todo = '';
     },
     // del:function(x) {
     //   console.log(x)
     //   this.list.splice(x,1)
     // }
   },
-  components:{
+  components: {
     needDo,
-    hasDone
-  }
-})
+    hasDone,
+  },
+});
 // new Vue ({
 //   el:'#ttt',
 //   data:{
