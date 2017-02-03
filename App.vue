@@ -1,10 +1,10 @@
 <template>
   <div id="todolist">
-  <h1>待办事项</h1>
-  <need-do :list='list'></need-do>
-  <input type="text" v-model="new_todo" @keyup.enter='addNewTodo' placeholder="按确定键添加待办事项">
-  <h1>已完成</h1>
-  <has-done :list='list'></has-done>
+    <h1>待办事项</h1>
+    <need-do :list='list'></need-do>
+    <input type="text" v-model="new_todo" @keyup.enter='addNewTodo' placeholder="按确定键添加待办事项">
+    <h1>已完成</h1>
+    <has-done :list='list'></has-done>
   </div>
 </template>
 
