@@ -1,7 +1,7 @@
 <template>
   <ol>
     <li v-for='(todo,index) in list' v-if='!todo.iscomplete'>
-      <span contenteditable="true" @keyup="edittwo(todo,$event.target)">{{ todo.content }}</span>
+      <span contenteditable="true" @blur="edittwo(todo,$event.target)">{{ todo.content }}</span>
       <input type="button" value="完成" @click="finish(todo)"/>
       <!-- <input type="button" value="保存修改" @click="edit(todo,$event.target)"/> -->
       <input type="button" value="删除" @click="del(index)"/>
