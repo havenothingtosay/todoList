@@ -1,6 +1,6 @@
 <template>
   <ol>
-    <li v-for='hasdone in prop' v-if='hasdone.iscomplete'>
+    <li v-for='hasdone in list' v-if='hasdone.iscomplete'>
       {{ hasdone.content }}
     </li>
   </ol>
@@ -9,6 +9,6 @@
 <script>
   export default {
     name: 'hasDone',
-    props: ['prop'],
+    props: ['list'],
   }
 </script>

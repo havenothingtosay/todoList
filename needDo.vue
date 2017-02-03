@@ -1,7 +1,7 @@
 <template>
   <ol>
-    <li v-for='(todo,index) in prop' v-if='!todo.iscomplete'>
-      <span contenteditable=true>{{ todo.content }}</span>
+    <li v-for='(todo,index) in list' v-if='!todo.iscomplete'>
+      <span contenteditable="true">{{ todo.content }}</span>
       <input type="button" value="完成" @click="finish(todo)"/>
       <input type="button" value="保存修改" @click="edit(todo,$event.target)"/>
       <input type="button" value="删除" @click="del(index)"/>
@@ -12,19 +12,19 @@
 <script>
   export default {
     name: 'need-do',
-    props: ['prop'],
+    props: ['list'],
     methods: {
-      finish: function (x) {
+      finish(x) {
         x.iscomplete = true;
       },
-      edit: function (x,target) {
+      edit(x,target) {
         // console.log(target.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML)
         // console.log(target.previousSibling.previousSibling.innerHTML)
         x.content = target.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML;
       },
-      del: function (x) {
+      del(x) {
         console.log(x);
-        this.prop.splice(x,1);
+        this.list.splice(x,1);
       }
     }
   }

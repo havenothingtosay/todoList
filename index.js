@@ -3,7 +3,7 @@ import Vue from 'vue';
 import needDo from './needDo.vue';
 import hasDone from './hasDone.vue';
 
-var todolist = new Vue({
+const todolist = new Vue({
   el: '#todolist',
   data: {
     list: [
@@ -13,7 +13,7 @@ var todolist = new Vue({
     new_todo: '',
   },
   methods: {
-    addNewTodo: function () {
+    addNewTodo() {
       this.list.push({ content: this.new_todo, iscomplete: false });
       this.new_todo = '';
     },
