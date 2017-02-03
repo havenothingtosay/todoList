@@ -7,20 +7,20 @@
 <body>
   <div id="todolist">
     <!-- <p v-for='item in list'>{{ item.content }}{{ item.iscomplete }}</p> -->
-    <h1>待办事项</h1>
+    <!-- <h1>待办事项</h1> -->
     <!-- <div id="ttt"> -->
       <!-- <li v-for='todo in list'>{{ todo.content }}</li> -->
       <!-- <todo v-for='(todo,index) in list' v-if='!todo.iscomplete' @dele='del(index)' :todo="todo"></todo> -->
       <!-- <li is='todo' v-for='(todo,index) in list' v-if='!todo.iscomplete' :todo='todo' @dele='del(index)'></li> -->
-    <need-do :list='list'></need-do>
+    <!-- <need-do :list='list'></need-do> -->
     <!-- </div> -->
-    <input type="text" v-model="new_todo" @keyup.enter='addNewTodo' placeholder="按确定键添加待办事项">
+    <!-- <input type="text" v-model="new_todo" @keyup.enter='addNewTodo' placeholder="按确定键添加待办事项"> -->
 
-    <h1>已完成</h1>
+    <!-- <h1>已完成</h1> -->
       <!-- <ol>
         <li is='hasdones' v-for='hasdone in list' v-if='hasdone.iscomplete' :hasdone='hasdone'></li>
       </ol> -->
-    <has-done :list='list'></has-done>
+    <!-- <has-done :list='list'></has-done> -->
   </div>
   <script type="text/javascript" src="./dist/build.js"></script>
 </body>
