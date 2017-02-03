@@ -17,20 +17,18 @@
       finish(x) {
         x.iscomplete = true;
       },
-      // edit(x,target) {
-        // // console.log(target.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML)
-        // // console.log(target.previousSibling.previousSibling.innerHTML)
-        // x.content = target.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML;
+      // edit(x, target) {
+      //   x.content = target.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML;
       // },
-      editTwo(x,target) {
-        console.log(x.content);
-        console.log(target.innerHTML);
+      editTwo(x, target) {
+        // console.log(x.content);
+        // console.log(target.innerHTML);
         x.content = target.innerHTML;
       },
       del(x) {
-        console.log(x);
-        this.list.splice(x,1);
-      }
-    }
-  }
+        // console.log(x);
+        this.list.splice(x, 1);
+      },
+    },
+  };
 </script>
