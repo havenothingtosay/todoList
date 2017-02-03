@@ -30,5 +30,5 @@ import App from './App.vue';
 
 new Vue({
   el: '#todolist',
-  render: h=>h(App)
-})
+  render: h => h(App),
+});
