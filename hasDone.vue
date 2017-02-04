@@ -10,5 +10,5 @@
   export default {
     name: 'hasDone',
     props: ['list'],
-  }
+  };
 </script>

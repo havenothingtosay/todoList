@@ -11,18 +11,19 @@
 <script>
   import needDo from './needDo.vue';
   import hasDone from './hasDone.vue';
+
   const list = {
     list: [
       { content: 'first', iscomplete: false },
       { content: 'second', iscomplete: false },
-    ]
+    ],
   };
   export default {
     data() {
       return {
         list: list.list,
         new_todo: '',
-      }
+      };
     },
     methods: {
       addNewTodo() {
@@ -34,5 +35,5 @@
       needDo,
       hasDone,
     },
-  }
+  };
 </script>

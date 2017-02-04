@@ -1,8 +1,11 @@
 {
     "extends": "airbnb-base",
     "plugins": [
-        "vuefix",
         "import",
-        "html"
-    ]
+        "vue"
+    ],
+    "rules": {
+        "linebreak-style": [0, "windows"],
+        "max-len": [0, 80, 4]
+    }
 }
